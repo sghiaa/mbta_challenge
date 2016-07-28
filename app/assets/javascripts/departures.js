@@ -26,3 +26,20 @@ Departures.clickNorthStation = function() {
   Departures.showNorthStation();
   Departures.hideSouthStation();
 }
+
+Departures.clickBothStations = function() {
+  Departures.showNorthStation();
+  Departures.showSouthStation();
+}
+
+$( document ).ready(function() {
+  $('input#south-station').change(function() {
+    Departures.clickSouthStation();
+  });
+  $('input#north-station').change(function() {
+    Departures.clickNorthStation();
+  });
+  $('input#both-stations').change(function() {
+    Departures.clickBothStations();
+  });
+});
