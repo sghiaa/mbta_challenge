@@ -1,8 +1,10 @@
 describe("Departures", function() {
+  beforeEach(function() {
+    loadFixtures('departures_fixture.html');
+  });
+
   describe("hideSouthStation", function() {
     it("should hide the south station rows", function() {
-      loadFixtures('departures_fixture.html');
-
       var row = $('tr#south-station');
       Departures.hideSouthStation();
 
@@ -11,8 +13,6 @@ describe("Departures", function() {
   });
   describe("showSouthStation", function() {
     it("should show the south station rows", function() {
-      loadFixtures('departures_fixture.html');
-
       var row = $('tr#south-station');
       Departures.hideSouthStation();
       Departures.showSouthStation();
@@ -22,8 +22,6 @@ describe("Departures", function() {
   });
   describe("hideNorthStation", function() {
     it("should hide the north station rows", function() {
-      loadFixtures('departures_fixture.html');
-
       var row = $('tr#north-station');
       Departures.hideNorthStation();
 
@@ -32,8 +30,6 @@ describe("Departures", function() {
   });
   describe("showNorthStation", function() {
     it("should show the north station rows", function() {
-      loadFixtures('departures_fixture.html');
-
       var row = $('tr#north-station');
       Departures.hideNorthStation();
       Departures.showNorthStation();
@@ -44,8 +40,6 @@ describe("Departures", function() {
 
   describe("clickSouthStation", function() {
     it("shows south station and hides north station", function() {
-      loadFixtures('departures_fixture.html');
-
       var northStationRow = $('tr#north-station');
       var southStationRow = $('tr#south-station');
 
@@ -58,8 +52,6 @@ describe("Departures", function() {
 
   describe("clickNorthStation", function() {
     it("hides south station and shows north station", function() {
-      loadFixtures('departures_fixture.html');
-
       var northStationRow = $('tr#north-station');
       var southStationRow = $('tr#south-station');
 
@@ -72,8 +64,6 @@ describe("Departures", function() {
 
   describe("clickBothStations", function() {
     it("shows south station and north station", function() {
-      loadFixtures('departures_fixture.html');
-
       var northStationRow = $('tr#north-station');
       var southStationRow = $('tr#south-station');
 

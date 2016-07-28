@@ -33,13 +33,13 @@ Departures.clickBothStations = function() {
 }
 
 $( document ).ready(function() {
-  $('input#south-station').change(function() {
+  $('input#south-station-button').change(function() {
     Departures.clickSouthStation();
   });
-  $('input#north-station').change(function() {
+  $('input#north-station-button').change(function() {
     Departures.clickNorthStation();
   });
-  $('input#both-stations').change(function() {
+  $('input#both-stations-button').change(function() {
     Departures.clickBothStations();
   });
 });
