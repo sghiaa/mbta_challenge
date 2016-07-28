@@ -1,10 +1,9 @@
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked>
-      North Station
+    <input type="radio" name="options" id="north-station" autocomplete="off" checked> North Station
   </label>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off">South Station
+    <input type="radio" name="options" id="south-station" autocomplete="off">South Station
   </label>
 </div>
 
@@ -23,7 +22,7 @@
   </thead>
   <tbody>
     <% @departures_data.each do |train| %>
-      <tr>
+      <tr id="<%= train[1].gsub(" ", "-").downcase %>">
         <td><%= Time.at(train[0].to_i).strftime("%H:%M") %></td>
         <td><%= train[1] %></td>
         <td><%= train[2] %></td>
