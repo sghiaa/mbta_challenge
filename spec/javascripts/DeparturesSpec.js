@@ -69,4 +69,18 @@ describe("Departures", function() {
       expect(southStationRow).toBeHidden();
     });
   });
+
+  describe("clickBothStations", function() {
+    it("shows south station and north station", function() {
+      loadFixtures('departures_fixture.html');
+
+      var northStationRow = $('tr#north-station');
+      var southStationRow = $('tr#south-station');
+
+      Departures.clickBothStations();
+
+      expect(northStationRow).toBeVisible();
+      expect(southStationRow).toBeVisible();
+    });
+  });
 });
