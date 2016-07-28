@@ -1,24 +1,30 @@
-<table>
-<tr>
- <td>Current Time</td>
- <td>Station</td>
- <td>Trip</td>
- <td>Destination</td>
- <td>Scheduled Time</td>
- <td>Lateness (minutes)</td>
- <td>Track</td>
- <td>Status</td>
-</tr>
-<% @departures_data.each do |train| %>
-  <tr>
-    <td><%= Time.at(train[0].to_i).strftime("%H:%M") %></td>
-    <td><%= train[1] %></td>
-    <td><%= train[2] %></td>
-    <td><%= train[3] %></td>
-    <td><%= Time.at(train[4].to_i).strftime("%H:%M") %></td>
-    <td><%= train[5].to_i/60 %></td>
-    <td><%= train[6] %></td>
-    <td><%= train[7] %></td>
-  </tr>
-<%end%>
+<script src="sorttable.js"></script>
+
+<table class="sortable table table-striped">
+  <thead>
+    <tr>
+      <th>Current Time</th>
+      <th>Station</th>
+      <th>Trip</th>
+      <th>Destination</th>
+      <th>Scheduled Time</th>
+      <th>Lateness (minutes)</th>
+      <th>Track</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @departures_data.each do |train| %>
+      <tr>
+        <td><%= Time.at(train[0].to_i).strftime("%H:%M") %></td>
+        <td><%= train[1] %></td>
+        <td><%= train[2] %></td>
+        <td><%= train[3] %></td>
+        <td><%= Time.at(train[4].to_i).strftime("%H:%M") %></td>
+        <td><%= train[5].to_i/60 %></td>
+        <td><%= train[6] %></td>
+        <td><%= train[7] %></td>
+      </tr>
+    <%end%>
+  </tbody>
 </table>
