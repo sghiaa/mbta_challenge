@@ -9,6 +9,7 @@ class DeparturesController < ApplicationController
     end
   end
 
+  private
   def get_data
     departure_data = []
     uri = URI("http://developer.mbta.com/lib/gtrtfs/Departures.csv")
